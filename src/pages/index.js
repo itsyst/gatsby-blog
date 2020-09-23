@@ -1,11 +1,13 @@
 import React from "react"
-import { Container, Header, Content } from "../components"
+import { Container, Header, Content, Post } from "../components"
 
 const IndexPage = () => {
   return (
     <Container>
       <Header />
-      <Content />
+      <Content>
+        <Post />
+      </Content>
     </Container>
   )
 }
