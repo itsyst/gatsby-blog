@@ -1,10 +1,10 @@
 import React from "react"
-import { Container } from "../components"
+import { Container, Header } from "../components"
 
 const IndexPage = () => {
-  return(
+  return (
     <Container>
-      <h1>Hello World!</h1>
+      <Header />
     </Container>
   )
 }
