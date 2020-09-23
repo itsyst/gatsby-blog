@@ -3,10 +3,10 @@ import styled from "styled-components"
 export const H1 = styled.h1`
     color: ${props => props.theme.colors.black};
     text-align: ${props => props.textAlign ? props.textAlign.left : 0};
-    margin: ${props => props.margin ? props.theme.spacings.small : 0};
+    margin: ${props => props.margin ? props.theme.spacings.xxSmall : 0};
 `
 export const H2 = styled.h2`
-    color: ${props => props.theme.colors.red };
+    color: ${props => props.theme.colors.red};
     text-align: ${props => props.textAlign ? props.textAlign.left : 0};
     margin: ${props => props.margin ? props.theme.spacings.small : 0};
 `;

@@ -22,7 +22,7 @@ export const SidebarWrapper = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.desktop} {
-    grid-column: 9 / span 5;
+    grid-column: 9 / span 3;
   }   
 `
 export const SideCardWrapper = styled.section`

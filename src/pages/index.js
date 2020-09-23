@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Header, Content, Post } from "../components"
+import { Container, Header, Content, Post,Card } from "../components"
 
 const IndexPage = () => {
   return (
@@ -8,6 +8,7 @@ const IndexPage = () => {
       <Content>
         <Post />
       </Content>
+      <Card />
     </Container>
   )
 }
