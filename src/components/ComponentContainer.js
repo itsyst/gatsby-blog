@@ -1,8 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { ContainerWrapper } from "./styles"
-import { Nav} from "../components"
+import { Nav, Footer } from "../components"
 
 export const Container = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,14 +17,12 @@ export const Container = ({ children }) => {
       }
     }
   `)
-
+  // here we consume the menuLinks
   return (
-    Container.propTypes = {
-      children: PropTypes.node.isRequired,
-    },
     <ContainerWrapper>
       <Nav menuLinks={data.site.siteMetadata.menuLinks} />
       {children}
+      <Footer />
     </ContainerWrapper>
   )
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import { NavWrapper, NavMenu, NavIcon } from "./styles"
 
 export const Nav = ({ menuLinks }) => {
@@ -11,17 +10,13 @@ export const Nav = ({ menuLinks }) => {
       }
     }
   `)
+
+  // create an event click - when click show menu
   const [nav, showNav] = useState(false);
 
   return (
-    Nav.propTypes = {
-      siteTitle: PropTypes.string,
-    },
 
-    Nav.defaultProps = {
-      siteTitle: `Gatsby Blog`,
-    },
-
+    // menuLinks from siteMetadata we pass this to the component container
     <NavWrapper>
       <Link to="/">
         <img src={data.logo.publicURL} alt="My Logo" />

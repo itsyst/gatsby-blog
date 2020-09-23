@@ -11,6 +11,7 @@ export default {
         greyDark: "rgba(87, 81, 81, 1)",
         blue: "rgba(3, 169, 244, 1)",
         orange: "rgba(233, 161, 17, 1)",
+        red:"rgb(255,0,0)",
         transparent: "transparent",
     },
     breakpoints: {

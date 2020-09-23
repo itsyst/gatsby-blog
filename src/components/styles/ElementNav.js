@@ -8,6 +8,10 @@ export const NavWrapper = styled.nav`
   z-index:20;
   background-color: ${props => props.theme.colors.white};
   
+  a {
+    color:${props => props.theme.colors.black}
+  }
+
   img{
     padding:1rem;
     height: 9rem;
@@ -32,6 +36,7 @@ export const NavMenu = styled.nav`
   top:0;
   right:0;
   transition : transform 300ms;
+  /* pass the property nav to toggle the visibility menu- if nav clicked translate or (show the menu)*/
   transform:${({ nav }) => (nav ? "translateX(0)" : "translateX(100%)")};
   background-color: ${props => props.theme.colors.white};
 
@@ -49,6 +54,7 @@ export const NavMenu = styled.nav`
     text-transform: uppercase;
     text-decoration:none;
   }
+  /*  when hover over the link shows underline*/
   a:hover::after{
     background: ${props => props.theme.colors.orange};
     cursor: pointer;
@@ -62,6 +68,7 @@ export const NavMenu = styled.nav`
   @media ${props => props.theme.breakpoints.tablet} {
     display:flex;
     position: absolute;
+  /* pass the property nav to toggle the visibility menu- if nav clicked translate or (show the menu)*/
     transform:${({ nav }) => (!nav ? "translateX(0)" : "translateX(100%)")};
     height: 9rem;
     align-items: center;
@@ -101,6 +108,7 @@ export const NavIcon = styled.button`
     position: relative;
     transition : opacity 300ms, transform 300ms;
 
+   /* style the three menu icon dashes*/
     :first-child{
       transform:${({ nav }) => (nav ? "rotate(45deg)" : "rotate(0))")};
     }
