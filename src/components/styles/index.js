@@ -1,4 +1,5 @@
 export * from "./ElementContainer"
+export * from "./ElementContent"
 export * from "./ElementFooter"
 export * from "./ElementHeader"
 export * from "./ElementNav"

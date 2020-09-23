@@ -1,4 +1,5 @@
 export * from "./ComponentContainer"
+export * from "./ComponentContent"
 export * from "./ComponentFooter"
 export * from "./ComponentHeader"
 export * from "./ComponentHeaderBImageLeft"
