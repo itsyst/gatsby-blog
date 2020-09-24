@@ -1,5 +1,5 @@
 import React from "react"
-import { PostCard } from "../components"
+import { PostCard } from "."
 import { graphql, useStaticQuery } from "gatsby"
 
 export const Post = () => {
