@@ -37,17 +37,17 @@ This is my first attempt to build my ownn site with Gatsby.
     gh repo create
     ```
     
-This is the my complete code for the Gatsby blog
+This is my complete code for the Gatsby blog
 
 ## Guide
 
-**Clone or download the code from this repo**
+1. **Clone or download the code from this repo**
 
     ```shell
     # git clone git@github.com:itsyst/khaled_elhamzi_tentan1.git
     gh repo create
     ```
-**Install the dependencies**
+2. **Install the dependencies**
 
     ```shell
     cd KhaledElHamzi-Tentan1/
@@ -59,15 +59,16 @@ This is the my complete code for the Gatsby blog
     cd KhaledElHamzi-Tentan1/
     yarn install 
     ```
-## 🚀 Launch the project
+3. **🚀Launch the project**
 
  ```sh
     gatsby develop
  ```
 
-## You can have a look to the deployed instance of this project
+3. **You can have a look to the deployed instance of this project**
 
-https://khaled-tentan.netlify.com
+ https://khaled-tentan.netlify.com
+
 
 ## 🧐 What's inside?
 
