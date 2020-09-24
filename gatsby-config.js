@@ -10,7 +10,7 @@ module.exports = {
     description: `This project is build with this default starter.`,
     url: "khaled-tentan.netlify.app",
     image:
-      "https://avatars1.githubusercontent.com/u/18060161?s=460&u=85beed0a05072d66c8005310225446fc0af548f9&v=4",
+      "https://pbs.twimg.com/profile_images/1308079564690722817/FGg4yFpW_400x400.jpg",
     twitterUsername: "@ElhamziKhaled",
     author: "Khaled El Hamzi",
     menuLinks: [

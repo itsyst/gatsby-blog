@@ -3,12 +3,19 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1 } from "../components/styles"
-import { Container,Main,SinglePost } from "../components"
+import { Container, Main, SinglePost, Seo } from "../components"
 
 const singlePost = ({ data }) => {
-    const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
-    return (
+  const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fixed
+  const seoImage = data.mdx.frontmatter.featureImage.publicURL  
+  
+  return (
       <Container>
+        <Seo
+          title={data.mdx.frontmatter.title}
+          image={seoImage}
+          description={data.mdx.frontmatter.excerpt}
+        />
         <Img
         fixed={featureImage}
         style={{

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 /* used this styling for the singlePost (mdx) */
-export const PostWrapper = styled.main`
+export const PostWrapper = styled.section`
   grid-column: 1 / span -1;
   grid-row: 2 / span 5;
   position:relative;
@@ -156,6 +156,7 @@ export const PostWrapper = styled.main`
   }
 
   @media ${props => props.theme.breakpoints.desktop} {
+    grid-column: 1 / span -1;
     padding: ${props =>
     `${props.theme.spacings.medium} ${props.theme.spacings.large}`};
   }
