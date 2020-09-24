@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+/* used this styling for the singlePost (mdx) */
 export const PostWrapper = styled.main`
   grid-column: 1 / span -1;
   grid-row: 2 / span 5;

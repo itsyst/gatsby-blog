@@ -7,9 +7,6 @@ import {
 import {
     BHeaderImageLeft,
     BHeaderImageRight,
-    SHeaderImageRight,
-    SHeaderImageMiddle,
-    SHeaderImageLeft,
 } from "../components"
 
 
@@ -20,9 +17,6 @@ export const Header = () => {
             <FeaturedWrapper>
                 <BHeaderImageLeft />
                 <BHeaderImageRight />
-                <SHeaderImageRight />
-                <SHeaderImageMiddle />
-                <SHeaderImageLeft />
             </FeaturedWrapper>
         </HeaderWrapper>
     )

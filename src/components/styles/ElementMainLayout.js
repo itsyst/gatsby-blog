@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+/* used this styling for the about contact and singlePost page */
 export const MainWrapper = styled.main`
   display:grid;
   grid-column: 1 / -1;
@@ -17,6 +18,7 @@ export const MainWrapper = styled.main`
     grid-column: 2 / span 10;
   }  
 `
+/* used this styling for the about and contact page */
 export const MainContentWrapper = styled.div`
   display: grid;
   background-color:${props => props.theme.colors.white};
@@ -46,10 +48,12 @@ export const MainContentWrapper = styled.div`
         }
     }
 `
+/* special styling just for the singlePost */
 export const SinglePostWrapper = styled.main`
   grid-column: 1 / -1;
   grid-row: 3 / 4;
-  margin:${props => props.theme.spacings.xSmall};
+   margin-bottom:${props =>
+    `${props.theme.spacings.xSmall}`};
   padding:${props => props.theme.spacings.small};
   background-color:${props => props.theme.colors.white};
   z-index:9;

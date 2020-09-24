@@ -77,6 +77,7 @@ export const P = styled.p`
     text-align: ${props => props.textAlign ? props.textAlign.center : 0};
 `;
 
+/* Used this the style the footer  */
 export const SPAN = styled.span`
     margin: ${props => {
         switch (props.margin) {
@@ -116,6 +117,7 @@ export const SPAN = styled.span`
     text-align: ${props => props.textAlign ? props.textAlign.center : 0};
 `;
 
+/* styling the contact form */
 export const Input = styled.input`
   height: ${props => props.theme.heights.large};
   border: 1px solid ${props => props.theme.colors.greyLight1};
