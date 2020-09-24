@@ -36,6 +36,38 @@ This is my first attempt to build my ownn site with Gatsby.
     # create a repository under github account using the current directory name
     gh repo create
     ```
+    
+This is the my complete code for the Gatsby blog
+
+## Guide
+
+**Clone or download the code from this repo**
+
+    ```shell
+    # git clone git@github.com:itsyst/khaled_elhamzi_tentan1.git
+    gh repo create
+    ```
+**Install the dependencies**
+
+    ```shell
+    cd KhaledElHamzi-Tentan1/
+    npm install 
+    ```
+    or 
+    
+    ```shell
+    cd KhaledElHamzi-Tentan1/
+    yarn install 
+    ```
+## 🚀 Launch the project
+
+ ```sh
+    gatsby develop
+ ```
+
+## You can have a look to the deployed instance of this project
+
+https://khaled-tentan.netlify.com
 
 ## 🧐 What's inside?
 
