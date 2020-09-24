@@ -120,6 +120,7 @@ export const Input = styled.input`
   height: ${props => props.theme.heights.large};
   border: 1px solid ${props => props.theme.colors.greyLight1};
   padding: ${props => props.theme.spacings.xSmall};
+  margin:${props => props.theme.spacings.xxSmall};
   background-color: #fff;
 `;
 
