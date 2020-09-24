@@ -7,7 +7,6 @@ export const H1 = styled.h1`
 `
 export const H2 = styled.h2`
     color: ${props => props.theme.colors.red};
-    text-align: ${props => props.textAlign ? props.textAlign.left : 0};
     margin: ${props => props.margin ? props.theme.spacings.small : 0};
 `;
 
@@ -29,6 +28,8 @@ export const P = styled.p`
                 return props.theme.sizes.large;
             case "medium":
                 return props.theme.sizes.medium;
+            case "xSmall":
+                return props.theme.sizes.xSmall;
             default:
                 return props.theme.sizes.small;
         }
@@ -113,4 +114,18 @@ export const SPAN = styled.span`
     }
     };
     text-align: ${props => props.textAlign ? props.textAlign.center : 0};
+`;
+
+export const Input = styled.input`
+  height: ${props => props.theme.heights.large};
+  border: 1px solid ${props => props.theme.colors.greyLight1};
+  padding: ${props => props.theme.spacings.xSmall};
+  background-color: #fff;
+`;
+
+export const Form = styled.form` 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: ${props => props.theme.spacings.xSmall};
 `;

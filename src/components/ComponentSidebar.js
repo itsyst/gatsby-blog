@@ -1,47 +1,49 @@
 import React from "react"
-import { SideCard } from "../components"
-import { SidebarWrapper,H1} from "../components/styles"
-import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import { graphql, useStaticQuery} from 'gatsby'
+import { SidebarWrapper, SideCardWrapper, H1, P} from "../components/styles"
 
-export const Card = () => {
-
+export const SideCard = ({ fluid }) => {
+   
     const data = useStaticQuery(graphql`
-        query {
-            allMdx (sort:{fields:[frontmatter___date],order:DESC},limit: 3) {
-                edges {
-                    node {
-                        id
-                        frontmatter {
-                            title
-                            date(formatString:"MMM Do YYYY")
-                            author
-                            slug
-                            excerpt
-                            featureImage {
-                                childImageSharp {
-                                    fluid {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    query {
+      site{
+          siteMetadata{
+              author
+          }
+      }
+      imageSharp(fluid: { originalName: { eq: "me.png" } }) {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
+      }
+    facebook: file(relativePath: { eq: "facebook.svg" }) {
+    publicURL
     }
-    `)
+    twitter: file(relativePath: { eq: "twitter.svg" }) {
+    publicURL
+    }
+    linkedin: file(relativePath: { eq: "linkedin.svg" }) {
+    publicURL
+    }
+    rss: file(relativePath: { eq: "rss.svg" }) {
+    publicURL
+    } 
+    }
+  `)
     return (
         <SidebarWrapper>
-            <H1 margin="Small">Recent Posts</H1>
-            {data.allMdx.edges.map(({ node }) => (
-                <SideCard
-                    id={node.id}
-                    title={node.frontmatter.title}
-                    slug={node.frontmatter.slug}
-                    excerpt={node.frontmatter.excerpt}
-                    fluid={node.frontmatter.featureImage.childImageSharp.fluid}
+            <SideCardWrapper>
+                <Img
+                    fluid={fluid ? fluid : data.imageSharp.fluid}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                    }}
                 />
-            ))}
+                <H1 margin="Small">Author: {data.site.siteMetadata.author}</H1>
+                <P>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor </P>
+            </SideCardWrapper>
         </SidebarWrapper>
     )
 }

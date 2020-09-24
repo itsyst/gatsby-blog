@@ -15,8 +15,8 @@ export default {
         transparent: "transparent",
     },
     breakpoints: {
-        desktop: "only screen and (min-width: 77rem)",
-        tablet: "only screen and (min-width: 38rem)",
+        desktop: "only screen and (min-width: 64rem)",
+        tablet: "only screen and (min-width: 48rem)",
     },
     spacings: {
         xxxSmall: ".1rem",
@@ -41,7 +41,6 @@ export default {
     weights: {
         normal: "normal",
         bold: "bold",
-        lighter: "lighter",
         bolder: "bolder",
         large: "400",
         xLarge: "700",

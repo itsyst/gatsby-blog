@@ -1,29 +1,40 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Container} from "../components"
 import Img from "gatsby-image"
-import { Container } from "../components"
+import { H2, MainWrapper,MainContentWrapper} from "../components/styles"
 
-const notFound = ({ data }) => {
-  const featureImage = data.imageSharp.fixed
+const NotFoundPage = ({ data }) => {
 
   return (
     <Container>
-      <Img fixed={featureImage} />
-      <h1 textAlign="center" margin="0 0 1rem 0">
-        Uh-oh... What you're looking for couldn't be found
-        </h1>
-
+      <MainWrapper>
+        <MainContentWrapper>
+        <Img
+          fluid={data.imageSharp.fluid}
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+        <H2 textAlign="center" margin="xSmall">
+          Uh-oh... What you're looking for couldn't be found
+          </H2>
+        </MainContentWrapper>
+      </MainWrapper>
     </Container>
-  )
-}
 
-export default notFound
+  )
+
+}
+export default NotFoundPage
 
 export const notFoundQuery = graphql`
   query NotFoundQuery {
-    imageSharp(fixed: { originalName: { eq: "sad-cat.jpg" } }) {
-      fixed {
-        ...GatsbyImageSharpFixed
+    imageSharp(fluid: { originalName: { eq: "sad-cat.jpg" } }) {
+      fluid {
+        ...GatsbyImageSharpFluid
       }
     }
   }
