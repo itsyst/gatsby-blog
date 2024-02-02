@@ -78,7 +78,7 @@ export const P = styled.p`
 `;
 
 /* Used this the style the footer  */
-export const SPAN = styled.span`
+export const Span = styled.span`
     margin: ${props => {
         switch (props.margin) {
             case "xxSmall":

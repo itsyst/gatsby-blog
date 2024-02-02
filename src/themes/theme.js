@@ -1,4 +1,4 @@
-export default {
+const theme = {
     fonts: {
         main: "PT Serif, Mulish, Helvetica,sans-serif",
         code: "Roboto Mono, monospace, Fira code",
@@ -11,7 +11,7 @@ export default {
         greyDark: "rgba(87, 81, 81, 1)",
         blue: "rgba(3, 169, 244, 1)",
         orange: "rgba(233, 161, 17, 1)",
-        red:"rgb(255,0,0)",
+        red: "rgb(255,0,0)",
         transparent: "transparent",
     },
     breakpoints: {
@@ -60,4 +60,6 @@ export default {
     shadows: {
         shadow1: "4px 2px rgba(30, 30, 31, 0.8)",
     },
-}
+};
+
+export default theme;

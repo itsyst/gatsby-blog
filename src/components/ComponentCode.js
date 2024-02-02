@@ -1,6 +1,5 @@
 import React from "react"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import theme from "prism-react-renderer/themes/vsDark"
+import { Highlight, themes, defaultProps } from "prism-react-renderer"
 
 export const Code = ({ codeString, language, ...props }) => {
     return (
@@ -8,7 +7,7 @@ export const Code = ({ codeString, language, ...props }) => {
             {...defaultProps}
             code={codeString}
             language={language}
-            theme={theme}
+            theme={themes.shadesOfPurple}
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <div className="gatsby-highlight" data-language={language}>

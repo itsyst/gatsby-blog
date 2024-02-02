@@ -5,8 +5,21 @@ import { BImageWrapperRight } from "./styles"
 
 export const BHeaderImageRight = () => {
     const data = useStaticQuery(graphql`
-    query { imageSharp(fluid: { originalName: { eq: "saab.jpg" } }) {
-        fluid {base64 tracedSVG aspectRatio srcWebp srcSetWebp originalName}}}`)
+        query   
+        {
+          imageSharp(fluid: {originalName: {eq: "saab.jpg"}}) {
+            fluid {
+              base64
+              tracedSVG
+              aspectRatio
+              srcWebp
+              srcSetWebp
+              originalName
+            }
+          }
+             
+        }
+    `)
 
     return (
         <BImageWrapperRight>

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Container, Header, Content, PostCard, Pagination, SideCard,Seo } from "../components"
+import { Container, Header, Content, PostCard, Pagination, SideCard, Seo } from "../components"
 
 const allPosts = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext
@@ -42,9 +42,9 @@ export default allPosts
 
 
 export const pageQuery = graphql`
-  query AllPostsQuery($skip: Int!, $limit: Int!) {
+  query AllPostsQuery($skip: Int, $limit: Int) {
     allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
+      sort:{frontmatter:{date:DESC}}
       skip: $skip
       limit: $limit
     ) {

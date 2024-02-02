@@ -1,23 +1,23 @@
-import React from "react"
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { FooterWrapper, FooterSocialWrapper, FooterSocialIcons, P, SPAN } from "./styles"
+import { FooterWrapper, FooterSocialWrapper, FooterSocialIcons, P, Span } from "./styles"
 
 export const Footer = () => {
     const data = useStaticQuery(graphql`
     query {
-        facebook: file(relativePath: { eq: "facebook.svg" }) {
-        publicURL
+          facebook: file(relativePath: {eq: "facebook.svg"}) {
+            publicURL
+          }
+          twitter: file(relativePath: {eq: "twitter.svg"}) {
+            publicURL
+          }
+          linkedin: file(relativePath: {eq: "linkedin.svg"}) {
+            publicURL
+          }
+          rss: file(relativePath: {eq: "rss.svg"}) {
+            publicURL
+          }
         }
-        twitter: file(relativePath: { eq: "twitter.svg" }) {
-        publicURL
-        }
-        linkedin: file(relativePath: { eq: "linkedin.svg" }) {
-        publicURL
-        }
-        rss: file(relativePath: { eq: "rss.svg" }) {
-        publicURL
-        } 
-    }
     `)
 
     return (
@@ -55,7 +55,7 @@ export const Footer = () => {
                 </FooterSocialIcons>
             </FooterSocialWrapper>
             <P>
-                <SPAN margin="xSmall"> © {new Date().getFullYear()}, Copyright All rights reserved </SPAN>
+                <Span margin="xSmall"> © {new Date().getFullYear()}, Copyright All rights reserved </Span>
             </P>
         </FooterWrapper>
     )

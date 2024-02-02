@@ -6,7 +6,7 @@ export const Post = () => {
 
     const data = useStaticQuery(graphql`
         query {
-            allMdx (sort:{fields:[frontmatter___date],order:DESC}) {
+            allMdx (sort:{frontmatter:{date:DESC}}) {
                 edges {
                     node {
                         id
@@ -26,8 +26,8 @@ export const Post = () => {
                     }
                 }
             }
+        	}
         }
-    }
     `)
     return (
         <div>
