@@ -7,7 +7,7 @@ const IndexPage = () => {
       <Header />
       <Content>
         <Post />
-        <Pagination/>
+        <Pagination />
       </Content>
       <SideCard />
     </Container>

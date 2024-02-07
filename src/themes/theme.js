@@ -21,7 +21,7 @@ const theme = {
     spacings: {
         xxxSmall: ".1rem",
         xxSmall: ".4rem",
-        xSmall: ".8rem",
+        xSmall: ".97rem",
         small: "1.6rem",
         medium: "3.3rem",
         large: "4.8rem",
@@ -29,8 +29,9 @@ const theme = {
         xxLarge: "9.6rem",
     },
     sizes: {
-        xxSmall: ".4rem",
-        xSmall: ".8rem",
+        xxxSmall: ".4rem",
+        xxSmall: ".8rem",
+        xSmall: "1rem",
         small: "1.6rem",
         medium: "3.3rem",
         large: "4.8rem",
@@ -60,6 +61,12 @@ const theme = {
     shadows: {
         shadow1: "4px 2px rgba(30, 30, 31, 0.8)",
     },
+    radius: {
+        small: "0.25rem",
+    },
+    decoration: {
+        italic: "italic"
+    }
 };
 
 export default theme;
