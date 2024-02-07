@@ -1,6 +1,20 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+ 
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        image
+        twitterUsername
+      }
+    }
+  }
+`
 
 export const Seo = ({ description, keywords, title, image, url, author }) => {
     const site = "https://khaled-tentan.netlify.app"
@@ -88,17 +102,3 @@ export const Seo = ({ description, keywords, title, image, url, author }) => {
         />
     )
 }
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        image
-        twitterUsername
-      }
-    }
-  }
-`

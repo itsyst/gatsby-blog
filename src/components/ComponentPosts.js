@@ -1,9 +1,8 @@
 import React from "react"
-import { PostCard } from "."
+import { Post } from "."
 import { graphql, useStaticQuery } from "gatsby"
 
-export const Post = () => {
-
+export const Posts = () => {
     const data = useStaticQuery(graphql`
         query {
             allMdx (sort:{frontmatter:{date:DESC}}) {
@@ -17,30 +16,41 @@ export const Post = () => {
                             slug
                             excerpt
                             featureImage {
-                                childImageSharp {
-                                    fluid {
-                                    ...GatsbyImageSharpFluid
+                                childrenImageSharp {
+                                        gatsbyImageData(
+                                          aspectRatio:1.5
+                                          width:200
+                                          height:200
+                                          placeholder:BLURRED
+                                          quality:70
+                                          blurredOptions: {width: 100}
+                                          transformOptions: {
+                                            fit:COVER 
+                                            cropFocus:CENTER
+                                          }
+                                        )
                                 }
                             }
                         }
                     }
                 }
             }
-        	}
         }
     `)
     return (
         <div>
             {data.allMdx.edges.map(({ node }) => (
-                <PostCard
+                <Post
                     id={node.id}
                     title={node.frontmatter.title}
                     date={node.frontmatter.date}
                     author={node.frontmatter.author}
                     slug={node.frontmatter.slug}
                     excerpt={node.frontmatter.excerpt}
+                    image={node.frontmatter.featureImage.childrenImageSharp[0].gatsbyImageData}
                 />
-            ))}
+            ))
+            }
         </div>
     )
 }

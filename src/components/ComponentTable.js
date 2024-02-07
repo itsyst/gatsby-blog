@@ -1,5 +1,5 @@
 import React from "react"
-import { TableWrapper } from "./styles"
+import styled from "styled-components"
 
 export const Table = ({ children }) => {
     return (
@@ -8,3 +8,8 @@ export const Table = ({ children }) => {
         </TableWrapper>
     )
 }
+ 
+export const TableWrapper = styled.div`
+  overflow-x: auto;
+  margin-top: 2rem;
+`
