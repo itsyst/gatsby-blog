@@ -1,3 +1,7 @@
+#gatsby-focus-wrapper {
+  background-color: rgb(240, 232, 232) !important;
+}
+
 .gatsby-highlight {
   position: relative;
   -webkit-overflow-scrolling: touch;
