@@ -17,7 +17,7 @@ This is my first attempt to build my ownn site with Gatsby.
     I used the Gatsby CLI to create a my default starter site.
 
     ```shell
-    gatsby new KhaledElHamzi-Tentan1
+    gatsby new gatsby-blog
     ```
 
 2.  **Ready to go.**
@@ -25,7 +25,7 @@ This is my first attempt to build my ownn site with Gatsby.
     I navigated into the new site directory and start it up.
 
     ```shell
-    cd KhaledElHamzi-Tentan1/
+    cd gatsby-blog/
     gatsby develop
     ```
 
@@ -44,19 +44,19 @@ This is my complete code for the Gatsby blog
 1. **Clone or download the code from this repo**
 
     ```shell
-    # git clone git@github.com:itsyst/khaled_elhamzi_tentan1.git
+    # git clone git@github.com:itsyst/gatsby-blog.git
     gh repo create
     ```
 2. **Install the dependencies**
 
     ```shell
-    cd KhaledElHamzi-Tentan1/
+    cd gatsby-blog/
     npm install 
     ```
     or 
     
     ```shell
-    cd KhaledElHamzi-Tentan1/
+    cd gatsby-blog/
     yarn install 
     ```
 3. **🚀Launch the project**
@@ -67,7 +67,7 @@ This is my complete code for the Gatsby blog
 
 3. **You can have a look to the deployed instance of this project**
 
- https://khaled-tentan.netlify.com
+ https://gatsbys-blog.netlify.app
 
 
 ## 🧐 What's inside?
