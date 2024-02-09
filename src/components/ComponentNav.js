@@ -20,7 +20,7 @@ export const Nav = ({ menuLinks }) => {
       <Link to="/">
         <img src={data.logo.publicURL} alt="My Logo" />
       </Link>
-      <NavMenu nav={nav}>
+      <NavMenu nav={nav ? nav : undefined} >
         <ul>
           {menuLinks.map(props => (
             <li key={props.name}>
@@ -29,7 +29,7 @@ export const Nav = ({ menuLinks }) => {
           ))}
         </ul>
       </NavMenu>
-      <NavIcon nav={nav} onClick={() => showNav(!nav)}>
+      <NavIcon nav={nav ? nav : undefined} onClick={() => showNav(!nav)}>
         <div />
         <div />
         <div />
@@ -52,7 +52,7 @@ const NavWrapper = styled.nav`
 
   img{
     padding:1rem;
-    height: 9rem;
+    height: 5rem;
   }
 
   @media ${props => props.theme.breakpoints.tablet} {
@@ -68,10 +68,11 @@ const NavMenu = styled.nav`
   position: fixed;
   flex-direction:column;
   justify-content: center;
-  align-items:end !important;
+  align-items:center !important;
   text-align:center;
   height:100vh;
   width: 100%;
+  z-index:-50;
   top:0;
   right:0;
   transition : transform 300ms;
@@ -109,10 +110,9 @@ const NavMenu = styled.nav`
     position: absolute;
   /* pass the property nav to toggle the visibility menu- if nav clicked translate or (show the menu)*/
     transform:${({ nav }) => (!nav ? "translateX(0)" : "translateX(100%)")};
-    height: 9rem;
-    align-items: center;
+    height: 5rem;
     justify-content: center;
-    width: 60%;
+    align-items:end !important;
 
     ul {
       display:flex;

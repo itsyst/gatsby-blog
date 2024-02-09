@@ -15,9 +15,9 @@ const query = graphql`
                         relativePath
                         base
                         childrenImageSharp {
-                            gatsbyImageData(
-                              height:447
-                              width:1070
+                            gatsbyImageData
+                             (
+                              aspectRatio:2.2
                               placeholder:BLURRED
                               quality:70
                               blurredOptions: {width: 100}
@@ -25,7 +25,7 @@ const query = graphql`
                                 fit:COVER 
                                 cropFocus:CENTER
                               }
-                            )
+                           )
                         }
                     }
                 }
@@ -49,10 +49,7 @@ export const HeaderImage = () => {
                         </Link>
 
                         <Carousel.Caption>
-                            <P
-                                fontStyle="italic"
-                                color="greyDark"
-                            >{frontmatter.featureImage.base.split('-').join(' ').split('.')[0]}</P>
+                            <P fontStyle="italic" color="greyDark">{frontmatter.featureImage.base.split('-').join(' ').split('.')[0]}</P>
                         </Carousel.Caption>
                     </Carousel.Item>
 

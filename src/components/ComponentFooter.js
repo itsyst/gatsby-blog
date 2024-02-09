@@ -55,7 +55,7 @@ export const Footer = () => {
                 </FooterSocialIcons>
             </FooterSocialWrapper>
             <P>
-                <Span margin="xSmall"> © {new Date().getFullYear()}, Copyright All rights reserved </Span>
+                <Span> © {new Date().getFullYear()}, Copyright All rights reserved </Span>
             </P>
         </FooterWrapper>
     )
@@ -63,32 +63,39 @@ export const Footer = () => {
 
 const FooterWrapper = styled.footer`    
     grid-column: 1 / span 6;
-    grid-row: 4/ span 5;
-    display: flex;
-    align-items: center;
+    grid-row: 4/5;
     color:${props => props.theme.colors.greyLight2};
     background-color: ${props => props.theme.colors.white};
-
+ 
     p {
-        font-size: 1.4rem;
+        font-size: 16px;
         display:flex;
         flex-direction:column;
         align-items: center;
-        flex: 0 1 100%;
     }
 
     @media ${props => props.theme.breakpoints.tablet} {
+        display: flex;
+        padding:18px;
+        flex-direction: row-reverse;
+        p {
+            flex-direction: row;
+            font-size: 1.4rem;
+        }
         grid-column: 1 / span 8;
         display:block;
     }
 
     @media ${props => props.theme.breakpoints.desktop} {
+        display: flex;
+        flex-direction: row-reverse;
         grid-column: 1 / span 14;
     }
 `
 
 const FooterSocialWrapper = styled.div`
     display: flex;
+    justify-content:center;
     align-items:center;
     flex: 0 1 25%;
 
@@ -103,8 +110,8 @@ const FooterSocialWrapper = styled.div`
 `
 const FooterSocialIcons = styled.div`
     display:flex;
-    flex-direction:column;
-    margin: 2rem 0;
+    flex-direction:row;
+    margin:2rem 0 0;
 
     img {
         height: 20px;
@@ -118,10 +125,9 @@ const FooterSocialIcons = styled.div`
     }
 
     @media ${props => props.theme.breakpoints.tablet} {
-        display:block;
+        display:flex;
         flex: 0 0 100%;
-        margin: 2rem 0 1rem 0;   
-
+        margin:0;
         img {
             margin: 0;
         }
@@ -129,6 +135,7 @@ const FooterSocialIcons = styled.div`
 `
 
 const P = styled.p`
+    flex:1 auto;
     margin: ${props => {
         switch (props.margin) {
             case "xxSmall":
@@ -233,4 +240,9 @@ const Span = styled.span`
     }
     };
     text-align: ${props => props.textAlign ? props.textAlign.center : 0};
+    padding-left: 0;
+
+    @media ${props => props.theme.breakpoints.tablet} {
+        padding-left: 152px;
+    }
 `;

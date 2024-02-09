@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from "styled-components"
 
 export const SideCard = ({ fluid }) => {
@@ -40,12 +40,15 @@ export const SideCard = ({ fluid }) => {
             width: "100%",
             height: "100%",
           }}
+          alt=""
         />
         <SideCardInfoWrapper className="re">
           <H1>{data.site.siteMetadata.author}</H1>
-          <P
-            color="greyDark"
-            fontSize="xSmall">Om du vill se mer projekt liknande detta, besök min <Link href="https://www.elhamzi.me" target="_blank">portfölj</Link> och glöm inte att kolla in GitHub-kodbasen och lämna en stjärna ⭐</P>
+          <P color="greyDark" fontSize="xSmall">
+            Om du vill se mer projekt liknande detta, besök min
+            <a href="https://www.elhamzi.me" target="_blank" rel="noreferrer">portfölj</a>
+            och glöm inte att kolla in GitHub-kodbasen och lämna en stjärna ⭐
+          </P>
         </SideCardInfoWrapper>
       </SideCardWrapper>
     </SidebarWrapper>
@@ -55,7 +58,7 @@ export const SideCard = ({ fluid }) => {
 const SidebarWrapper = styled.section`
   display:none;
 
-@media ${props => props.theme.breakpoints.tablet} {
+  @media ${props => props.theme.breakpoints.tablet} {
     display:grid;
     grid-column: 6 /-1;
     height:20vh;
@@ -170,4 +173,7 @@ const P = styled.p`
   };
    text-align: ${props => props.textAlign ? props.textAlign.center : 0};
    padding:${props => `${props.theme.spacings.xSmall}`};
+   a {
+     padding:5px;
+   }
 `;

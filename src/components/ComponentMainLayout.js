@@ -13,8 +13,7 @@ export const Main = ({ children }) => {
 const SinglePostWrapper = styled.main`
   grid-column: 1 / -1;
   grid-row: 3 / 4;
-  margin-bottom:${props =>
-        `${props.theme.spacings.xSmall}`};
+  margin-bottom:${props =>`${props.theme.spacings.xSmall}`};
   padding:${props => props.theme.spacings.small};
   background-color:${props => props.theme.colors.white};
   z-index:9;
@@ -23,12 +22,10 @@ const SinglePostWrapper = styled.main`
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
     grid-row: 3 / 4;
-
   }
 
   @media ${props => props.theme.breakpoints.desktop} {
     grid-column: 2 / -1;
     grid-row: 3 / 4;
-
   }  
 `

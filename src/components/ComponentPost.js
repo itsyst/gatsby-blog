@@ -15,8 +15,8 @@ export const Post = ({ title, date, author, excerpt, slug, img }) => {
                     marginBottom="xSmall"
                 ><Span color="black">Published</Span> {date} <Span color="black">by</Span> {author}</P>
                 <PostCardContentWrapper>
-                    <StyledGatsbyImage image={img} />
-                    <P color="greyDark" margin="xSmall" fontSize="small">{excerpt}</P>
+                    <StyledGatsbyImage image={img} alt={title} />
+                    <P color="greyDark" margin="xSmall" fontSize="small" key={title}>{excerpt}</P>
                 </PostCardContentWrapper>
             </div>
             <ButtonWrapper href={`/${slug}`}>... Read More ...</ButtonWrapper>
@@ -38,13 +38,16 @@ const PostCardWrapper = styled.div`
 `
 
 const StyledGatsbyImage = styled(GatsbyImage)`
-  width: 200px; 
   height: auto !important;
-  
+  display: none;
   &:hover {
     -ms-transform: scale(0.9); /* IE 9 */
     -webkit-transform: scale(0.9); /* Safari 3-8 */
     transform: scale(0.9);  
+  }
+
+  @media ${props => props.theme.breakpoints.tablet} {
+    display:block;
   }
 `
 

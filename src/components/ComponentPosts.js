@@ -18,9 +18,7 @@ export const Posts = () => {
                             featureImage {
                                 childrenImageSharp {
                                         gatsbyImageData(
-                                          aspectRatio:1.5
-                                          width:200
-                                          height:200
+                                          aspectRatio:2.2
                                           placeholder:BLURRED
                                           quality:70
                                           blurredOptions: {width: 100}
