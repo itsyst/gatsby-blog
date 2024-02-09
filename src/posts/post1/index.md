@@ -2,7 +2,7 @@
 title: Hur man blir en bättre webbdesigner?
 date: 2021-12-23
 author: Khaled
-slug: baettre-webbdesigner
+slug: baettre-webbdesigner 
 featureImage: Bättre-webbdesigner.png
 excerpt: Mitt största råd är att jobba tätt ihop med frontendutvecklare som ska göra verklighet av din design.
 ---

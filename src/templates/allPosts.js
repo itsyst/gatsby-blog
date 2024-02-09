@@ -17,7 +17,6 @@ export const query = graphql`
             featureImage {
                 childrenImageSharp {
                    gatsbyImageData(
-                      aspectRatio:1.5
                       height:200
                       width:200
                       placeholder:BLURRED

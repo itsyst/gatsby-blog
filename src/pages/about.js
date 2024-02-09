@@ -5,7 +5,7 @@ import { Container } from "../components"
 import styled from "styled-components"
 
 const AboutPage = ({ fluid }) => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site{
           siteMetadata{
@@ -19,26 +19,24 @@ const AboutPage = ({ fluid }) => {
       }
     }
   `)
-    return (
-        <Container>
-            <MainWrapper>
-                <MainContentWrapper>
-                    <Img
-                        fluid={fluid ? fluid : data.imageSharp.fluid}
-                        style={{
-                            width: "40%",
-                            height: "40%",
-                        }}
-                    />
-                    <div>
-                        <H1>{data.site.siteMetadata.author}</H1>
-                        <P color="black">Ambitiös och initiativtagande certifierad Systemutvecklare .NET som drivs av nya utmaningar och älskar att arbeta tillsammans med andra. Strävar efter att utvecklas inom system- och databasutveckling och är alltid hungrig på att lära sig nya saker.
-                        </P>
-                    </div>
-                </MainContentWrapper>
-            </MainWrapper>
-        </Container>
-    )
+  return (
+    <Container>
+      <MainWrapper>
+        <Img
+          fluid={fluid ? fluid : data.imageSharp.fluid}
+          style={{
+            width: "40%",
+          }}
+          alt="me"
+        />
+        <div>
+          <H1>{data.site.siteMetadata.author}</H1>
+          <P color="black">Ambitiös och initiativtagande certifierad Systemutvecklare .NET som drivs av nya utmaningar och älskar att arbeta tillsammans med andra. Strävar efter att utvecklas inom system- och databasutveckling och är alltid hungrig på att lära sig nya saker.
+          </P>
+        </div>
+      </MainWrapper>
+    </Container>
+  )
 }
 
 export default AboutPage
@@ -49,11 +47,27 @@ const MainWrapper = styled.main`
   grid-column: 1 / -1;
   grid-row: 2 / 3;
   justify-content: center;
-  align-items:start;
-  height:100%;
-  overflow:auto;
+  align-items:center;
+  margin:${props => props.theme.spacings.xSmall};
 
+  div:first-child {
+    display: none;
+  }
+
+  h1,p{
+    padding:${props => props.theme.spacings.xSmall};
+  }
+  
+  h2{
+    text-align:center;
+  }
+  
   @media ${props => props.theme.breakpoints.tablet} {
+    background-color:${props => props.theme.colors.white};
+    display: flex;
+    div:first-child {
+      display: block;
+    }
     grid-column: 2 / span 6;
   }  
 
@@ -62,45 +76,19 @@ const MainWrapper = styled.main`
   }  
 `
 
-/* used this styling for the about and contact page */
-const MainContentWrapper = styled.div`
-  display: grid;
-  background-color:${props => props.theme.colors.white};
-  margin:${props => props.theme.spacings.xSmall};
 
-  img,h1,p{
-    padding:${props => props.theme.spacings.xSmall};
-  }
-
-  h2{
-    text-align:center;
-  }
-
-    @media ${props => props.theme.breakpoints.tablet} {
-      display: inline-flex;
-        input,
-        form {
-          width:30rem;
-        }
-    }
-
-    @media ${props => props.theme.breakpoints.desktop} {
-      display: flex;
-        input,
-        form {
-          width:40rem;
-        }
-    }
-`
 
 const H1 = styled.h1`
+    background-color:${props => props.theme.colors.white};
     color: ${props => props.theme.colors.black};
     text-align: ${props => props.textAlign ? props.textAlign.left : 0};
     margin: ${props => props.margin ? props.theme.spacings.xxSmall : 0};
 `
 
 const P = styled.p`
-    margin: ${props => {
+  background-color:${props => props.theme.colors.white};
+
+  margin: ${props => {
     switch (props.margin) {
       case "xxSmall":
         return props.theme.spacings.xxSmall;
@@ -111,7 +99,7 @@ const P = styled.p`
     }
   }
   };
-    font-size:${props => {
+  font-size:${props => {
     switch (props.fontSize) {
       case "large":
         return props.theme.sizes.large;
@@ -124,7 +112,7 @@ const P = styled.p`
     }
   }
   };
-    line-height: ${props => {
+  line-height: ${props => {
     switch (props.lineHeight) {
       case "small":
         return props.theme.heights.small;
@@ -137,7 +125,7 @@ const P = styled.p`
     }
   }
   };
-    font-weight: ${props => {
+  font-weight: ${props => {
     switch (props.fontWeight) {
       case "normal":
         return props.theme.weights.normal;
@@ -148,7 +136,7 @@ const P = styled.p`
     }
   }
   };
-    color: ${props => {
+  color: ${props => {
     switch (props.color) {
       case "black":
         return props.theme.colors.black;
@@ -163,5 +151,4 @@ const P = styled.p`
     }
   }
   };
-    text-align: ${props => props.textAlign ? props.textAlign.center : 0};
-`;
+ `;

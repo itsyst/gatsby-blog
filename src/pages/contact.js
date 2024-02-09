@@ -8,16 +8,14 @@ const ContactPage = () => {
   return (
     <Container>
       <MainWrapper>
-        <MainContentWrapper>
-          <div style={{ padding: "2rem" }}>
-            <H1>Contact</H1>
-            <Form>
-              <Input type="text" name="name" placeholder="Name" />
-              <Input type="email" name="email" placeholder="Email" />
-              <ButtonWrapper type="submit">Submit</ButtonWrapper>
-            </Form>
-          </div>
-        </MainContentWrapper>
+        <div style={{ padding: "2rem" }}>
+          <H1>Contact</H1>
+          <Form>
+            <Input type="text" name="name" placeholder="Name" />
+            <Input type="email" name="email" placeholder="Email" />
+            <ButtonWrapper type="submit">Submit</ButtonWrapper>
+          </Form>
+        </div>
       </MainWrapper>
     </Container>
   )
@@ -30,24 +28,8 @@ const MainWrapper = styled.main`
   display:grid;
   grid-column: 1 / -1;
   grid-row: 2 / 3;
-  justify-content: center;
-  align-items:start;
-  height:100%;
-  overflow:auto;
-
-  @media ${props => props.theme.breakpoints.tablet} {
-    grid-column: 2 / span 6;
-  }  
-
-  @media ${props => props.theme.breakpoints.desktop} {
-    grid-column: 2 / span 10;
-  }  
-`
-
-/* used this styling for the about and contact page */
-const MainContentWrapper = styled.div`
+  height:300px;
   display: grid;
-  background-color:${props => props.theme.colors.white};
   margin:${props => props.theme.spacings.xSmall};
 
   img,h1,p{
@@ -57,22 +39,20 @@ const MainContentWrapper = styled.div`
   h2{
     text-align:center;
   }
+ 
+  div {
+    background-color:${props => props.theme.colors.white};
+  }
+  
+  @media ${props => props.theme.breakpoints.tablet} {
+    justify-content: center;
+    align-items:start;
+    grid-column: 2 / span 6;
+  }  
 
-    @media ${props => props.theme.breakpoints.tablet} {
-      display: inline-flex;
-        input,
-        form {
-          width:30rem;
-        }
-    }
-
-    @media ${props => props.theme.breakpoints.desktop} {
-      display: flex;
-        input,
-        form {
-          width:40rem;
-        }
-    }
+  @media ${props => props.theme.breakpoints.desktop} {
+    grid-column: 2 / span 10;
+  }  
 `
 
 const ButtonWrapper = styled(props => <Link {...props} />)`
@@ -104,6 +84,11 @@ const Input = styled.input`
   padding: ${props => props.theme.spacings.xSmall};
   margin:${props => props.theme.spacings.xxSmall};
   background-color: #fff;
+  width:100%;
+ 
+  @media ${props => props.theme.breakpoints.tablet} {
+    width:30rem;
+  }
 `;
 
 const Form = styled.form` 
@@ -111,4 +96,11 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   margin: ${props => props.theme.spacings.xSmall};
+
+  @media ${props => props.theme.breakpoints.tablet} {
+      display: inline-flex;
+      form {
+        width:30rem;
+      }
+  }
 `;
